@@ -1,5 +1,5 @@
 {
-  "name": "queuestorm-api",
+  "name": "queuestorm-api-cosmic-cannonball",
   "version": "1.0.0",
   "description": "QueueStorm ticket classification API",
   "main": "src/server.js",

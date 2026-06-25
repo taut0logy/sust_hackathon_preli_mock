@@ -12,11 +12,15 @@ async function classifyTicket(req, res, next) {
       });
     }
     
+    console.log('Classifying ticket:', ticket.ticket_id);
     const result = await llmService.classifyTicket(ticket);
+    console.log('Classification result:', JSON.stringify(result));
     
     res.json(result);
     
   } catch (err) {
+    console.error('Classification error:', err.message);
+    
     if (err.message.includes('OPENAI_API_KEY')) {
       return res.status(503).json({
         error: 'LLM service not configured',
